@@ -84,7 +84,16 @@ console.log(copiaAnimales)
 
 // 8. Usa propagación para combinar dos objetos en uno nuevo
 
-let unionObjetos = {...persona1, persona2}
+let persona3 = {
+    nombre: "Salomon",
+    apellido: "Perez",
+}
+
+let paises = {
+    pais: "Venezuela",
+    capital: "Distrito Capital"
+}
+let unionObjetos = {...persona3, ...paises}
 
 console.log(unionObjetos)
 
