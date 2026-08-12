@@ -3,124 +3,126 @@ Clase 39 - Ejercicios: Clases
 Vídeo: https://youtu.be/1glVfFxj8a4?t=18630
 */
 
-// // 1. Crea una clase que reciba dos propiedades
+// 1. Crea una clase que reciba dos propiedades
 
-// class animales {
+class animales {
 
-//     constructor(nombre, habita){
-//         this.nombre = nombre
-//         this.habita = habita
-//     }
+    constructor(nombre, habita){
+        this.nombre = nombre
+        this.habita = habita
+    }
 
-//     describe(){
-//         return `El ${this.nombre} vive en ${this.habita}`
-//     }
+    describe(){
+        return `El ${this.nombre} vive en ${this.habita}`
+    }
 
-//     static nacimiento(ano){
-//         return `El animalito nacio en el ano ${ano}`;
-//     }
-// }
+    static nacimiento(ano){
+        return `El animalito nacio en el ano ${ano}`;
+    }
+}
 
-// let animal1 = new animales("Oso Panda", "Antartida");
+let animal1 = new animales("Oso Panda", "Antartida");
 
-// console.log(animal1)
-// console.log(typeof animal1)
+console.log(animal1)
+console.log(typeof animal1)
 
-// // 2. Añade un método a la clase que utilice las propiedades
+// 2. Añade un método a la clase que utilice las propiedades
 
-// class personaConMetodo{
-//     constructor(name, secondName, age){
-//         this.name = name
-//         this.secondName = secondName
-//         this.age = age
-//     }                     
+class personaConMetodo{
+    constructor(name, secondName, age){
+        this.name = name
+        this.secondName = secondName
+        this.age = age
+    }                     
 
-//     camina(){
-//         console.log(`El senor ${this.name} camina`)
-//     }
-// }
+    camina(){
+        console.log(`El senor ${this.name} camina`)
+    }
+}
 
-// // 3. Muestra los valores de las propiedades e invoca a la función
+// 3. Muestra los valores de las propiedades e invoca a la función
 
-// let personita = new personaConMetodo("Shania", "Gomez", 27)
-// console.log(personita)
-// personita.camina()
+let personita = new personaConMetodo("Shania", "Gomez", 27)
+console.log(personita)
+personita.camina()
 
-// // 4. Añade un método estático a la primera clase
-// // hecho en el ejercicio 1
+// 4. Añade un método estático a la primera clase
+// hecho en el ejercicio 1
 
-// // 5. Haz uso del método estático
+// 5. Haz uso del método estático
 
-// console.log(animales.nacimiento(2024));
+console.log(animales.nacimiento(2024));
 
-// // 6. Crea una clase que haga uso de herencia
+// 6. Crea una clase que haga uso de herencia
 
-// class Perro extends animales{
-//     sonido(){
-//         console.log(`GUAUUU GUAUUU`)
-//     }
-// }
+class Perro extends animales{
+    sonido(){
+        console.log(`GUAUUU GUAUUU`)
+    }
+}
 
-// let miPerro = new Perro("Mecha", "Domestico");
-// console.log(miPerro);
-// miPerro.sonido();
+let miPerro = new Perro("Mecha", "Domestico");
+console.log(miPerro);
+miPerro.sonido();
 
-// // 7. Crea una clase que haga uso de getters y setters
+// 7. Crea una clase que haga uso de getters y setters
 
-// class primerGet{
-//     #user
-//     #password
-//     #pin
+class primerGet{
+    #user
+    #password
+    #pin
 
-//     constructor(user, password, pin){
-//         this.#user = user
-//         this.#password = password
-//         this.#pin = pin
-//     }
+    constructor(user, password, pin){
+        this.#user = user
+        this.#password = password
+        this.#pin = pin
+    }
 
-//     get user () {
-//         return `Nombre de usuario ${this.#user}`
-//     }
+    get user () {
+        return `Nombre de usuario ${this.#user}`
+    }
     
 
-//     set password (contrasena){
-//         this.#password = contrasena
-//     }
+    set password (contrasena){
+        this.#password = contrasena
+    }
 
-//     get password () {
-//         return `Contrasena ${this.#password}`
-//     }
+    get password () {
+        return `Contrasena ${this.#password}`
+    }
 
-// }
-// //let usuario = new primerGet("ShaniaGo", "qwerty.4", 3006);
+}
+//let usuario = new primerGet("ShaniaGo", "qwerty.4", 3006);
 
-// // 8. Modifica la clase con getters y setters para que use propiedades privadas
+// 8. Modifica la clase con getters y setters para que use propiedades privadas
 
-// //hecho en el ejercicio 7
+//hecho en el ejercicio 7
 
-// // 9. Utiliza los get y set y muestra sus valores
+// 9. Utiliza los get y set y muestra sus valores
 
-// let usuario = new primerGet("ShaniaGo", "qwerty.4", 3006);
-// console.log(usuario.user)
+let usuario = new primerGet("ShaniaGo", "qwerty.4", 3006);
+console.log(usuario.user)
 
-// usuario.password = "qwerty.5"
-// console.log(usuario.password)
+usuario.password = "qwerty.5"
+console.log(usuario.password)
 
-// // 10. Sobrescribe un método de una clase que utilice herencia 
+// 10. Sobrescribe un método de una clase que utilice herencia 
 
-// class gato extends animales {
-//     constructor(nombre, habita, tipoDeAgua){
-//         super(nombre, habita)
-//         this.tipoDeAgua = tipoDeAgua
-//     }
+class gato extends animales {
+    constructor(nombre, habita, tipoDeAgua){
+        super(nombre, habita)
+        this.tipoDeAgua = tipoDeAgua
+    }
     
-//     describe(){
-//         return super.describe() +` y bebe ${this.tipoDeAgua}`
-//     }
-// }
+    describe(){
+        return super.describe() +` y bebe ${this.tipoDeAgua}`
+    }
+}
 
-// let miGato = new gato("LittleFinger", "Casa", "Agua Dulce")
-// console.log(miGato.describe())
+let miGato = new gato("LittleFinger", "Casa", "Agua Dulce")
+console.log(miGato.describe())
+
+//Ejercicio de practica otorgado por la IA
 
 class Juguete {
   #diarioSecreto;
@@ -149,9 +151,6 @@ class Juguete {
   get bateria(){
     return this.#bateria
   }
-
-
-
 }
 
 // PRUEBA:
@@ -160,3 +159,68 @@ const miOsito = new Juguete("Teddy", "marrón", "Me gusta la miel");
 miOsito.jugar(); // Batería: 80%
 miOsito.jugar(); // Batería: 60%
 console.log(miOsito.bateria); // Debería devolver "80%" o 80
+
+//Ejercicio 2 de practica otorgado por la IA
+
+class Mascota{
+  #hambre = 50;
+  constructor(nombre, especie){
+    this.nombre = nombre
+    this.especie = especie
+  }
+  comer(){
+    if(this.#hambre > 0){
+      this.#hambre = Math.max(0, this.#hambre - 20)
+      console.log(`La mascota ${this.nombre} esta comiendo.`)
+    } else {
+      console.log(`La mascota ${this.nombre} esta totalmente llena y no quiere comer mas`)
+    }
+  }
+
+  jugar(){
+    this.#hambre += 20
+    console.log(`${this.nombre} jugo alegremente, ahora tiene ${this.#hambre} de hambre`)
+  }
+
+  get estado (){
+    return `${this.nombre} es un(a) ${this.especie} y su nivel de hambre es de ${this.#hambre}`
+  }
+
+}
+
+// PRUEBA TU CÓDIGO:
+let miMascota = new Mascota("Luna", "Gato");
+
+console.log(miMascota.estado); // Ver estado inicial
+
+miMascota.comer(); // Hambre baja a 30
+miMascota.comer(); // Hambre baja a 10
+miMascota.comer(); // Hambre baja a 0
+miMascota.comer(); // ¡Debería decir que ya está llena!
+
+miMascota.jugar(); // Hambre sube a 20 nuevamente
+
+console.log(miMascota.estado); // Ver estado actualizado
+
+class Perro extends Mascota{
+  constructor(nombre, raza){
+    super(nombre, "Perro")
+    this.raza = raza
+  }
+
+  ladrar (){
+    console.log(`¡Guau guau! ${this.nombre} menea la cola.`)
+  }
+
+  jugar(){
+    super.jugar()
+    console.log(`¡Además, ${this.nombre} trajo la pelota de vuelta!`)
+  }
+}
+
+// PRUEBA:
+const miPerro = new Perro("Firulais", "Golden Retriever");
+
+console.log(miPerro.estado); // Viene heredado de Mascota
+miPerro.ladrar();           // Exclusivo de Perro
+miPerro.jugar();            // Sobrescrito combinando super.jugar()
