@@ -51,21 +51,20 @@ export class animales {
 // 7. Exporta una función, una constante y una clase por defecto (en caso de que lo permita)
 
 export default function procesarUsuario() {
-  // 1. Clase declarada dentro de la función
+
   class Usuario {
     constructor(nombre) {
       this.nombre = nombre;
     }
   }
 
-  // 2. Constante con la instancia
   const nuevoUsuario = new Usuario("Shania");
 
   console.log(`Usuario registrado: ${nuevoUsuario.nombre}`);
 }
 
 // Para probarla:
-procesarUsuario();
+//procesarUsuario();
 
 
 
