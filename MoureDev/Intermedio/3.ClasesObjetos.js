@@ -101,16 +101,176 @@ let personInfo = {age: 28, email: `gsclantiunasg@gmail.com`}
 let persona = Object.assign(personName, personInfo)
 console.log(persona)
 
-// // 6. Crea una clase abstracta
-// console.log(`------ EJERCICIO NRO 6 ------`)
-// // 7. Utiliza polimorfismo en dos clases diferentes
-// console.log(`------ EJERCICIO NRO 7 ------`)
+// 6. Crea una clase abstracta
+console.log(`------ EJERCICIO NRO 6 ------`)
 
-// // 8. Implementa un Mixin
-// console.log(`------ EJERCICIO NRO 8 ------`)
+class empleados {
+    constructor (name, secondName, id, phone){
+        if(new.target === empleados){
+            throw new Error (`No se puede instanciar esta clase`)  
+            //Al agregar este error evito que se instancie directamente la clase padre, 
+            // permitiendo que solo sea utilizada a través de la herencia por sus subclases   
+        }
+        this.name = name
+        this.secondName = secondName
+        this.id = id
+        this.phone = phone
+    }
 
-// // 9. Crea un Singleton
-// console.log(`------ EJERCICIO NRO 9 ------`)
+    empleadoFijo(){
+        throw new Error(`Epa aqui no es, crea una subclase`)
+    }
 
-// // 10. Desarrolla un Proxy
-// console.log(`------ EJERCICIO NRO 10 ------`)
+    empleadoContratado(){
+         throw new Error(`Epa aqui no es, crea una subclase`)
+    }
+}
+
+
+// 7. Utiliza polimorfismo en dos clases diferentes
+console.log(`------ EJERCICIO NRO 7 ------`)
+
+class Fijo extends empleados {
+    empleadoFijo(horas){
+        const salarioHora = 10;
+        this.horas = horas
+        let sueldoMensual = this.horas * salarioHora
+
+        console.log(`Sr(a) ${this.name} Cobrara este mes ${sueldoMensual}$`)
+    } // aca se esta implementando el polimorfismo ya que estoy tomando una funcion de la clase padre y la estoy modificando para que realice una accion en especifico
+}
+
+class Contratado extends empleados {
+      empleadoContratado(horas){
+        const salarioHora = 7;
+        this.horas = horas
+        let sueldoMensual = this.horas * salarioHora
+
+        console.log(`Sr(a) ${this.name} Cobrara este mes ${sueldoMensual}$`)
+    } // aca se esta implementando el polimorfisma ya que estoy tomando una funcion de la clase padre y la estoy modificando para que realice una accion en especifico
+}
+
+const fijo = new Fijo(`Shania`, `Gomez`, 21332453, 41478989) // Ejemplo de que se hereda los campos que solicita la clase
+//console.log(fijo)
+fijo.empleadoFijo(40)
+
+const contratado = new Contratado(`Jim`, `Byrne`, 2345443, 3455634235) // Ejemplo de que se hereda los campos que solicita la clase
+//console.log(contratado)
+contratado.empleadoContratado(50)
+
+// 8. Implementa un Mixin
+console.log(`------ EJERCICIO NRO 8 ------`)
+
+class Personajes {
+    #vida = 100
+    constructor (nombre){
+        this.nombre = nombre
+    }
+    atacar(){
+            if(this.#vida < 100){
+                this.#vida += 10
+                console.log(`Toma tu tortazo. Nivel de vida: ${this.#vida}`)
+            }else{
+                console.log(`Toma tu tortazo`)
+            }
+        }
+
+    recibirDanio(){
+        if(this.#vida > 0){
+            this.#vida -= 10;
+            console.log(`Has sido atacado, nivel de vida actual: ${this.#vida}. Debes atacar para aumentar el nivel de vida`)
+        }else {
+            console.log(`Haz perdido la batalla, intentalo de nuevo`)
+        }
+    }
+
+    get vida(){
+        return this.#vida
+    }
+}
+
+class Guerrero extends Personajes {
+    fuerzaFisica(){
+
+    }
+}
+
+class Mago extends Personajes {
+    hechizoBasico(){
+
+    }
+}
+
+const flyMixing = (Base) => class extends Base{
+    fly(){
+        console.log(`${this.nombre} dice: Puedo volar, Puedo volar!!!!!`)
+    }
+}
+
+class GuerreroVolador extends flyMixing(Guerrero){
+
+}
+
+class MagoVolador extends flyMixing(Mago){
+    
+}
+
+const thanos = new GuerreroVolador(`Thanos`)
+const loky = new MagoVolador(`LOKY`)
+
+console.log(thanos.nombre)
+console.log(loky.nombre)
+
+thanos.fly()
+loky.fly()
+// thanos.recibirDanio()
+// thanos.recibirDanio()
+// thanos.recibirDanio()
+// thanos.atacar()
+
+
+// 9. Crea un Singleton
+console.log(`------ EJERCICIO NRO 9 ------`)
+class ArenaDeJuego {
+    static instancia = null;
+
+    constructor(mapa){
+        if(ArenaDeJuego.instancia){
+            return ArenaDeJuego.instancia
+        }
+
+        this.mapa = mapa
+
+        ArenaDeJuego.instancia = this
+    }
+}
+
+const arena1 = new ArenaDeJuego("Bosque Oscuro");
+const arena2 = new ArenaDeJuego("Coliseo de Roma");
+
+console.log(arena1)
+console.log(arena2)
+console.log(arena1 == arena2)
+
+
+// 10. Desarrolla un Proxy
+console.log(`------ EJERCICIO NRO 10 ------`)
+const handler = {
+    set(target, property, value){
+        console.log(`Alerta! estan intentando cambiar la propiedad ${property} por ${value}`)
+
+        if(property === "nombre" && value.trim() === ""){
+            console.log(`No puede dejar el campo en blanco`)
+            return false
+        }
+
+        target[property] = value
+        console.log(`Cambio aplicado con exito`)
+        return true
+
+    }
+}
+
+let thanosSeguro = new Proxy(thanos, handler)
+
+thanosSeguro.nombre = "Thanos el indestructuble"
