@@ -12,9 +12,9 @@ let productoBase = {
 }
 
 let producto = Object.create(productoBase)
-    producto.nameProducto = `Bacitracina`,
-    producto.precio = 30,
-    producto.stock = 100,
+    producto.nameProducto = `Bacitracina`;
+    producto.precio = 30;
+    producto.stock = 100;
    
 productoBase.dcto = function(){
     let montoDcto = this.precio * 0.20
@@ -31,9 +31,9 @@ producto.dcto()
 console.log(`------ EJERCICIO NRO 2 ------`)
 
 let producto1 = Object.create(productoBase)
-producto1.nameProducto = `Vaselina`
-producto1.precio = 5
-producto1.categoria = `Unguentos`
+producto1.nameProducto = `Vaselina`;
+producto1.precio = 5;
+producto1.categoria = `Unguentos`;
 
 producto1.imprimir()
 producto1.dcto()
@@ -66,7 +66,7 @@ let inventario = {
         } else if (this._stock <= 5) {
             return `Ultimas unidades disponibles, debes recargar el stock de ${this.nameProduc}`
         } else {
-            return `Disponible ${this.nameProduc}}`
+            return `Disponible ${this.nameProduc}`
         }
     },
 
@@ -259,7 +259,7 @@ const handler = {
     set(target, property, value){
         console.log(`Alerta! estan intentando cambiar la propiedad ${property} por ${value}`)
 
-        if(property === "nombre" && value.trim() === ""){
+        if(property === "nombre" && value.trim() === "" && typeof value === "string"){
             console.log(`No puede dejar el campo en blanco`)
             return false
         }
