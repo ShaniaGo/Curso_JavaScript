@@ -113,7 +113,7 @@ async function PUTAPIs(id) {
 PUTAPIs(100)
 
 // 6. Realiza una petición PATCH para modificar únicamente uno o dos campos de un recurso existente
-console.log(`------ EJERCICIO NRO 5 ------`)
+console.log(`------ EJERCICIO NRO 6 ------`)
 async function PathAPIs(id) {
     try {
         const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -138,9 +138,88 @@ async function PathAPIs(id) {
 PathAPIs(100)
 
 // 7. Envía una solicitud DELETE a la API para borrar un recurso (por ejemplo, una publicación) y verifica la respuesta
+console.log(`------ EJERCICIO NRO 7 ------`)
+async function deleteAPIs(id) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+        if(!response.ok){
+            throw Error(`Respuesta del HTTP: ${response.status}`)
+        }
+        
+        console.log(`Datos eliminados exitosamente`)
+    } catch (error) {
+        console.log(`Error: ${error}`)
+    } 
+}
+
+deleteAPIs(100)
 
 // 8. Crea una función que realice una solicitud GET (la que quieras) a OpenWeatherMap
+console.log(`------ EJERCICIO NRO 8 ------`)
+
+async function getAPIsWeather(ciudad) {
+    const apiKey = "ce5a63ff7305e7af1c21b0f4ab666505"
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`
+    
+    try {
+        const response = await fetch(url)
+        if(!response.ok){
+            throw Error(`Respuesta del HTTP: ${response.status}`)
+        }
+        const datos = await response.json()
+        console.log(datos) 
+    } catch (error) {
+        console.log(`Error: ${error}`)
+    } 
+}
+
+getAPIsWeather(`Venezuela`)
+
 
 // 9. Utiliza la PokéAPI para obtener los datos de un Pokémon concreto, a continuación los detalles de la especie y, finalmente, la cadena evolutiva a partir de la especie
+console.log(`------ EJERCICIO NRO 9 ------`)
+
+async function APIsPokePendeja(pokemon) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+    
+    try {
+        console.log(`---------------- POKEMON -------------------`)
+        const response = await fetch(url)
+        if(!response.ok){
+            throw Error(`Respuesta del HTTP: ${response.status}`)
+        }
+        const datos = await response.json()
+        console.log(datos.species.url) 
+        
+        console.log(`---------------- ESPECIE----------------`)
+        const response1 = await fetch(datos.species.url)
+        if(!response1.ok){
+            throw Error(`Respuesta del HTTP: ${response1.status}`)
+        }
+        const datos1 = await response1.json()
+        console.log(datos1) 
+        
+        console.log(`--------------------- CADENA EVOLUTIVA -------------------`)
+          const response2 = await fetch(datos1.evolution_chain.url)
+        if(!response2.ok){
+            throw Error(`Respuesta del HTTP: ${response2.status}`)
+        }
+        const datos2 = await response2.json()
+        console.log(datos2.chain) 
+        console.log(datos2.chain.evolves_to) 
+        
+        
+    } catch (error) {
+        console.log(`Error: ${error}`)
+    } 
+}
+
+APIsPokePendeja("pikachu")
 
 // 10. Utiliza una herramienta como Postman o Thunder Client para probar diferentes endpoint de una API
