@@ -21,7 +21,7 @@ const user = async function buscador(userId) {
     } catch (error) {
         Swal.fire({
             toast: true,
-            position: 'top-end',
+            position: 'bottom-end',
             timer: 2000,
             showConfirmButton: false,
             icon: "error",
@@ -79,12 +79,25 @@ function limpiarTabla(){
 //FUNCIONALIDAD DE MI BOTON Y ENTER
 button.addEventListener("click", async () => {
     const ingreso = portero(input.value)
+     if(input.value == ""){
+         Swal.fire({
+            toast: true,
+            position: 'bottom-end',
+            timer: 2000,
+            showConfirmButton: false,
+            icon: "error",
+            title: "Oops...",
+            text: "DEBE INGRESAR UN ID",
+        });
+        return
+     }
+
     if(ingreso == false){
         limpiarTabla()
         input.value = ""
         Swal.fire({
             toast: true,
-            position: 'top-end',
+            position: 'botttom-end',
             timer: 2000,
             showConfirmButton: false,
             icon: "error",
@@ -94,13 +107,12 @@ button.addEventListener("click", async () => {
         return 
     }
 
-
     const result = await user(input.value)
     input.value = ""
     pintarID(result)
         Swal.fire({
             toast: true,
-            position: 'top-end',
+            position: 'bottom-end',
             timer: 2000,
             showConfirmButton: false,
             title: "USUARIO ENCONTRADO",
@@ -111,12 +123,24 @@ button.addEventListener("click", async () => {
 input.addEventListener("keypress", async ()=>{
     if(event.key === "Enter"){  
         const ingreso = portero(input.value)
+        if(input.value == ""){
+         Swal.fire({
+            toast: true,
+            position: 'bottom-end',
+            timer: 2000,
+            showConfirmButton: false,
+            icon: "error",
+            title: "Oops...",
+            text: "DEBE INGRESAR UN ID",
+        });
+        return
+     }
         if(ingreso == false){
             limpiarTabla()
             input.value = ""
             Swal.fire({
                 toast: true,
-                position: 'top-end',
+                position: 'bottom-end',
                 timer: 2000,
                 showConfirmButton: false,
                 icon: "error",
@@ -126,13 +150,12 @@ input.addEventListener("keypress", async ()=>{
             return
         }
 
-        
         const result = await user(input.value)
         input.value = ""
         pintarID(result)
          Swal.fire({
             toast: true,
-            position: 'top-end',
+            position: 'bottom-end',
             timer: 2000,
             showConfirmButton: false,
             title: "USUARIO ENCONTRADO",
