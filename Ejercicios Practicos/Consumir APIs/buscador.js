@@ -3,12 +3,12 @@ const input = document.getElementById("exampleFormControlInput")
 const form = document.getElementById("form")
 
 const campos = [
-    'td-id',
-    'td-name',
-    'td-username',
-    'td-email',
-    'td-phone',
-    'td-website'
+    'id',
+    'name',
+    'username',
+    'email',
+    'phone',
+    'website'
 ]
 
 //VALIDACION CON REGEX
@@ -49,56 +49,18 @@ const user = async function buscador(userId) {
 
 //FUNCION PARA PINTAR EN PANTALLA LOS DATOS DEL USUARIO
 function pintarID(user){
-        // campos.forEach(campo =>{
-        //     const element = document.getElementById(campo);
-        //     if(element.id == campo){
-        //         element.value = user;
-        //     }
-        // })
-        const idUser = document.getElementById("td-id")
-        idUser.textContent = user.id
-
-        const name = document.getElementById("td-name")
-        name.textContent = user.name
-
-        const username = document.getElementById("td-username")
-        username.textContent = user.username
-        
-        const email = document.getElementById("td-email")
-        email.textContent = user.email
-
-        const phone = document.getElementById("td-phone")
-        phone.textContent = user.phone
-
-        const website = document.getElementById("td-website")
-        website.textContent = user.website
+    campos.forEach(campo =>{
+        const element = document.getElementById(campo)
+        element.textContent = user[campo]
+    })
 }
 
 //FUNCION PARA PINTAR EN PANTALLA LOS DATOS DEL USUARIO
 function limpiarTabla(){
-    // campos.forEach(campo =>{
-    //         const element = document.getElementById(campo);
-    //         if(element.id == campo){
-    //             element.value = campo;
-    //         }
-    //     })
-        const idUser = document.getElementById("td-id")
-        idUser.textContent = ""
-
-        const name = document.getElementById("td-name")
-        name.textContent = ""
-
-        const username = document.getElementById("td-username")
-        username.textContent = ""
-        
-        const email = document.getElementById("td-email")
-        email.textContent = ""
-
-        const phone = document.getElementById("td-phone")
-        phone.textContent = ""
-
-        const website = document.getElementById("td-website")
-        website.textContent = ""
+        campos.forEach(campo => {
+            const element = document.getElementById(campo)
+            element.textContent = ""
+    });
 }
 
 //FORMA MAS RAPIDA DE DARLE FUNCIONALIDAD A UN INPUT Y BOTONS
