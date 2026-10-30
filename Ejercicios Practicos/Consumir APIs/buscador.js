@@ -55,7 +55,7 @@ function pintarID(user){
     })
 }
 
-//FUNCION PARA PINTAR EN PANTALLA LOS DATOS DEL USUARIO
+//FUNCION PARA LIMPIAR EN PANTALLA LOS DATOS DEL USUARIO
 function limpiarTabla(){
         campos.forEach(campo => {
             const element = document.getElementById(campo)
