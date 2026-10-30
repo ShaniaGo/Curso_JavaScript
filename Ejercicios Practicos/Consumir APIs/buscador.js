@@ -11,11 +11,22 @@ const campos = [
     'td-website'
 ]
 
-
 //VALIDACION CON REGEX
 function portero(washiman){
     respuesta = /^(?=.*[0-9]).{1,2}$/.test(washiman)
     return respuesta
+}
+
+function alerts(icon, title, text){
+    Swal.fire({
+            toast: true,
+            position: 'bottom-end',
+            timer: 2000,
+            showConfirmButton: false,
+            icon,
+            title,
+            text,
+        });
 }
 
 //CONEXION CON EL JSON PLACEHOLDER
@@ -29,15 +40,7 @@ const user = async function buscador(userId) {
         console.log(datos) 
         return datos
     } catch (error) {
-        Swal.fire({
-            toast: true,
-            position: 'bottom-end',
-            timer: 2000,
-            showConfirmButton: false,
-            icon: "error",
-            title: "Oops...",
-            text: "USUARIO NO ENCONTRADO",
-        });
+        alerts("error", "Oops...", "USUARIO NO ENCONTRADO")
         limpiarTabla()
         console.log(`${error}`)
         return
@@ -104,133 +107,21 @@ form.addEventListener("submit", async (evento) =>{
     const ingreso = portero(input.value)
      if(input.value == ""){
         limpiarTabla()
-         Swal.fire({
-            toast: true,
-            position: 'bottom-end',
-            timer: 2000,
-            showConfirmButton: false,
-            icon: "warning",
-            title: "Oops...",
-            text: "DEBE INGRESAR UN ID",
-        });
+        alerts("warning", "Oops...", "DEBE INGRESAR UN ID" )
         return
      }
 
     if(ingreso == false){
         limpiarTabla()
         input.value = ""
-        Swal.fire({
-            toast: true,
-            position: 'bottom-end',
-            timer: 2000,
-            showConfirmButton: false,
-            icon: "error",
-            title: "Oops...",
-            text: "INGRESE UN ID VALIDO",
-        });
+        alerts("error", "Oops...", "INGRESE UN ID VALIDO")
         return 
     }
 
     const result = await user(input.value)
     input.value = ""
-    pintarID(result)
-        Swal.fire({
-            toast: true,
-            position: 'bottom-end',
-            timer: 2000,
-            showConfirmButton: false,
-            title: "USUARIO ENCONTRADO",
-            icon: "success",
-    });
+    if(result){
+        pintarID(result)
+        alerts("success", "ENHORABUENA!", "USUARIO ENCONTRADO" )
+    }
 })
-
-
-//FUNCIONALIDAD DE MI BOTON Y ENTER
-// button.addEventListener("click", async () => {
-//     const ingreso = portero(input.value)
-//      if(input.value == ""){
-//          Swal.fire({
-//             toast: true,
-//             position: 'bottom-end',
-//             timer: 2000,
-//             showConfirmButton: false,
-//             icon: "error",
-//             title: "Oops...",
-//             text: "DEBE INGRESAR UN ID",
-//         });
-//         return
-//      }
-
-//     if(ingreso == false){
-//         limpiarTabla()
-//         input.value = ""
-//         Swal.fire({
-//             toast: true,
-//             position: 'botttom-end',
-//             timer: 2000,
-//             showConfirmButton: false,
-//             icon: "error",
-//             title: "Oops...",
-//             text: "INGRESE UN ID VALIDO",
-//         });
-//         return 
-//     }
-
-//     const result = await user(input.value)
-//     input.value = ""
-//     pintarID(result)
-//         Swal.fire({
-//             toast: true,
-//             position: 'bottom-end',
-//             timer: 2000,
-//             showConfirmButton: false,
-//             title: "USUARIO ENCONTRADO",
-//             icon: "success",
-//             draggable: true
-//     });
-// })
-// input.addEventListener("keypress", async ()=>{
-//     if(event.key === "Enter"){  
-//         const ingreso = portero(input.value)
-//         if(input.value == ""){
-//          Swal.fire({
-//             toast: true,
-//             position: 'bottom-end',
-//             timer: 2000,
-//             showConfirmButton: false,
-//             icon: "error",
-//             title: "Oops...",
-//             text: "DEBE INGRESAR UN ID",
-//         });
-//         return
-//      }
-//         if(ingreso == false){
-//             limpiarTabla()
-//             input.value = ""
-//             Swal.fire({
-//                 toast: true,
-//                 position: 'bottom-end',
-//                 timer: 2000,
-//                 showConfirmButton: false,
-//                 icon: "error",
-//                 title: "Oops...",
-//                 text: "INGRESE UN ID VALIDO",
-//             });
-//             return
-//         }
-
-//         const result = await user(input.value)
-//         input.value = ""
-//         pintarID(result)
-//          Swal.fire({
-//             toast: true,
-//             position: 'bottom-end',
-//             timer: 2000,
-//             showConfirmButton: false,
-//             title: "USUARIO ENCONTRADO",
-//             icon: "success",
-//             draggable: true
-//     });
-//     }
-
-// })
