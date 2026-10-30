@@ -13,21 +13,24 @@
 
 <!-- Fondo gris claro, centrado en la pantalla -->
 <body class="bg-light d-flex flex-column align-items-center justify-content-center vh-100">
-    <header class="text-center py-4 bg-white shadow-sm mb-4">
-        <div class="container">
-            <h2 class="fw-bold text-primary mb-1">Directorio de JSONPlaceholder</h2>
-            <h5 class="text-muted fs-6 mb-0">Consulta de Expediente</h5>
+    <header class="container pt-4 pb-2 text-center" style="max-width: 800px;">
+        <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1 mb-2 small fw-semibold">
+            ⚡ Consulta de Expediente
         </div>
+        <h1 class="h3 fw-bold text-dark mb-1">Directorio de JSONPlaceholder</h1>
+        <p class="text-muted small mb-0">Busca y visualiza la información de los usuarios en tiempo real.</p>
     </header>
 
     <main class="container w-100" style="max-width: 800px;">
         
         <!-- Tarjeta para el buscador -->
         <div class="card shadow-sm p-4 mb-4">
-            <div class="input-group">
-                <h3 id="msgError"></h3>
-                <input type="text" class="form-control" id="exampleFormControlInput" placeholder="Ingrese el nro de ID">
-                <button type="button" class="btn btn-primary px-4" id="button">BUSCAR</button>
+            <div>
+                <form id="form" class="input-group" >
+                    <input type="text" class="form-control" id="exampleFormControlInput" placeholder="Ingrese el nro de ID">
+                    <button type="submit" class="btn btn-primary px-4" id="button">BUSCAR</button>
+                </form>
+                
             </div>
         </div>
 
@@ -74,10 +77,10 @@
 
     </main>
     
-    <footer class="text-center py-3 bg-white border-top mt-5 text-muted small">
+    <footer class="bg-light text-muted text-center py-3 mt-5">
         <div class="container">
             <p class="mb-1">© 2025 J&S. Todos los derechos reservados.</p>
-            <p class="mb-0">Desarrollado por Ing. Shania Gomez</p>
+            <p class="mb-0">Desarrollado por Ing Shania Gómez</p>
         </div>
     </footer>
 </body>
