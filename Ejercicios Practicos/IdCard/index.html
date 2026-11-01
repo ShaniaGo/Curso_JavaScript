@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="APIsSimpsom.js" defer></script>
+    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>IdCard de los Simpsom</title>
+    <!-- Tu script -->
+    <script src="APIsSimpsom.js" defer></script>
+    <title>ID Card de los Simpson</title>
 </head>
 
-<body class="bg-light d-flex flex-column align-items-center justify-content-center vh-100">
+<!-- Cambiamos el vh-100 por min-vh-100 y quitamos el justify-content-center para que fluyan los elementos con espacio -->
+<body class="bg-light d-flex flex-column min-vh-100 justify-content-between">
+
+    <!-- Encabezado -->
     <header class="container pt-4 pb-2 text-center" style="max-width: 800px;">
-        <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-1 mb-2 small fw-semibold">
+        <div class="d-inline-flex align-items-center justify-content-center bg-warning bg-opacity-25 text-dark rounded-pill px-3 py-1 mb-2 small fw-bold">
             🍩 Springfield ID System
         </div>
-        <h1 class="h3 fw-bold text-dark mb-1">ID de los Simpsom</h1>
+        <h1 class="h3 fw-bold text-dark mb-1">ID de los Simpson</h1>
         <p class="text-muted small mb-0">Busca y visualiza la información de los personajes en tiempo real.</p>
     </header>
 
-    <main class="container w-100" style="max-width: 800px;">
-        
-        <!-- Tarjeta para el buscador -->
-        <div class="card shadow-sm p-4 mb-4">
+    <main class="container w-100 my-auto py-3" style="max-width: 800px;">
         
         <!-- Tarjeta para el buscador -->
         <div class="card shadow-sm border-0 rounded-4 p-4 mb-4 bg-white">
@@ -33,25 +35,27 @@
         </div>
 
         <!-- Carnet Horizontal de los Simpson -->
-        <div class="card shadow border-3 border-warning rounded-4 overflow-hidden bg-white">
-            <form action="" method="GET" class="row g-0 align-items-center p-3">
-                
+        <form class="card shadow-lg border-3 border-warning rounded-4 overflow-hidden bg-white">
+            <div class="row g-0 align-items-center p-3">
+
                 <!-- Columna de la Imagen (Avatar tipo Carnet) -->
-                <div class="col-md-4 text-center p-3 bg-light rounded-3 d-flex justify-content-center align-items-center">
-                    <img src="" alt="Foto del personaje" id="image_path" class="img-fluid rounded-circle shadow-sm border border-2 border-warning" style="width: 140px; height: 140px; object-fit: cover;">
+                <div class="col-md-4 text-center p-3 bg-light rounded-3 d-flex flex-column justify-content-center align-items-center">
+                    <img src="https://img.magnific.com/vector-premium/ilustracion-rosquilla-colores-dibujada-mano_16109-2288.jpg?semt=ais_hybrid&w=740&q=80" alt="Foto del personaje" id="portrait_path" class="img-fluid rounded-circle shadow-sm border border-3 border-warning bg-white" style="width: 130px; height: 130px; object-fit: cover;">
+                    <div id="id" class="badge bg-dark text-warning mt-2 px-2 py-1 fw-bold">ID: --</div>
                 </div>
 
                 <!-- Columna de los Datos del Carnet -->
                 <div class="col-md-8">
                     <div class="card-body ps-md-4">
                         <!-- Nombre como título principal del carnet -->
-                        <div id="id"></div>
                         <h4 id="name" class="fw-bold text-dark mb-2">Nombre del Personaje</h4>
                         
                         <!-- Badges/Etiquetas para Fecha de nacimiento y Edad -->
-                        <div class="d-flex gap-2 mb-3">
-                            <span class="badge bg-secondary text-light px-3 py-2" id="birthdate">📅 Fecha: --</span>
-                            <span class="badge bg-warning text-dark px-3 py-2 fw-semibold" id="age">🎂 Edad: --</span>
+                        <div class="d-block flex-wrap gap-2 mb-3">
+                            <label class="badge bg-secondary text-light px-3 py-2" id="birthdate">📅 Fecha: --</label>
+                            <label class="badge bg-warning text-dark px-3 py-2 fw-semibold" id="age">🎂 Edad: --</label>
+                            <label class="badge bg-warning text-dark px-3 py-2 fw-semibold" id="occupation">👨‍💼Ocupacion: --</label>
+                            <label class="badge bg-warning text-dark px-3 py-2 fw-semibold" id="status">Status: --</label>
                         </div>
 
                         <!-- Descripción / Biografía -->
@@ -61,15 +65,17 @@
                     </div>
                 </div>
 
-            </form>
-        </div>
+            </div>
+        </form>
     </main>
     
-    <footer class="bg-light text-muted text-center py-3 mt-5">
+    <!-- Footer -->
+    <footer class="bg-white border-top text-muted text-center py-3 mt-auto">
         <div class="container">
             <p class="mb-1">© 2025 J&S. Todos los derechos reservados.</p>
-            <p class="mb-0">Desarrollado por Ing Shania Gómez</p>
+            <p class="mb-0">Desarrollado por Ing. Shania Gómez</p>
         </div>
     </footer>
+
 </body>
 </html>

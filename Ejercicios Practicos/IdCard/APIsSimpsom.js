@@ -1,15 +1,33 @@
 const lookInput = document.getElementById("exampleFormControlInput")
 const search = document.getElementById("button")
+const urlAPIs = 'https://thesimpsonsapi.com/api/characters/'
+const urlAPIsImage = `https://cdn.thesimpsonsapi.com/`
+const sizeImage = 200;
+const imgPredeterminada = 'https://img.magnific.com/vector-premium/ilustracion-rosquilla-colores-dibujada-mano_16109-2288.jpg?semt=ais_hybrid&w=740&q=80'
 const datosPersonajes = [
-    'image_path',
+    'id',
     'name',
     'birthdate',
+    'portrait_path',
     'age',
-    'description'
+    'occupation',
+    'description',
+    'status'
 ]
 
+const cleanCard = {
+    id: "ID: --",
+    name: "Nombre del Personaje",
+    birthdate: "📅 Fecha: --",
+    portrait_path: "Foto del personaje",
+    age: "🎂 Edad: --",
+    occupation: "👨‍💼Ocupacion: --",
+    description: "Selecciona un ID para consultar la información del carnet de identidad de Springfield...",
+    status: "Status: --"
+}
+
 function portero(washiman){
-    respuesta = /^(?=.*[0-9]).{1,2}$/.test(washiman)
+    respuesta = /^(?=.*[0-9]).{1,5}$/.test(washiman)
     return respuesta
 }
 
@@ -26,9 +44,9 @@ function alerts(icon, title, text){
 }
 
 //CONEXION CON EL JSON PLACEHOLDER
-const user = async function buscador(userId) {
+const user = async (userId) => {
     try {
-        const response = await fetch(`https://thesimpsonsapi.com/api/characters/${userId}`)
+        const response = await fetch(`${urlAPIs}${userId}`)
         if(!response.ok){
         throw new Error(`USUARIO NO ENCONTRADO`)
     }
@@ -42,13 +60,16 @@ const user = async function buscador(userId) {
         return
     } 
 }
-user(3)
 
 //FUNCION PARA PINTAR EN PANTALLA LOS DATOS DEL USUARIO
 function pintarPersonaje(user){
     datosPersonajes.forEach(campo =>{
         const element = document.getElementById(campo)
-        element.textContent = user[campo]
+        if(campo === "portrait_path"){
+            element.setAttribute('src', `${urlAPIsImage}${sizeImage}${user.portrait_path}`)
+        } else {
+            element.textContent = user[campo]
+        }
     })
 }
 
@@ -56,10 +77,13 @@ function pintarPersonaje(user){
 function limpiarCard(){
     datosPersonajes.forEach(campo => {
             const element = document.getElementById(campo)
-            element.textContent = ""
+            if(campo === "portrait_path"){
+            element.setAttribute('src', imgPredeterminada)
+        } else {
+            element.textContent = cleanCard[campo]
+        }
     });
 }
-
 
 //FORMA MAS RAPIDA DE DARLE FUNCIONALIDAD A UN INPUT Y BOTONS
 form.addEventListener("submit", async (evento) =>{
