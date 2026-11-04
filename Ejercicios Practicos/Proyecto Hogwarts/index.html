@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos con CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Mi script -->
+    <script type="module" src="js/pages.js" defer></script>
+    <title>Hogwarts | Año Escolar</title>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <!-- Barra de navegacion estilo Hogwarts -->
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-hogwarts shadow-sm py-3">
+        <div class="container-fluid px-4">
+          <a class="navbar-brand fw-bold fs-4" href="#">⚡ ¡Bienvenidos a un año nuevo en Hogwarts!</a>
+          <button
+            class="navbar-toggler border-warning"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav gap-3">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="estudiantes.html">Estudiantes</a>
+              <a class="nav-link" href="profesores.html">Profesores</a>
+              <a class="nav-link" href="hechizos.html">Hechizos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenido Principal (Espacio listo para tus futuras tarjetas o buscadores) -->
+    <main class="container my-auto py-5 text-center" style="max-width: 800px">
+      <div class="magic-card p-5">
+        <h2 style="font-family: &quot;Cinzel&quot;, serif" class="text-warning mb-3">El Gran Comedor te espera</h2>
+        <p class="text-light mb-0">
+          Selecciona una sección en el menú superior para comenzar tu exploración por los pasillos del castillo.
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-hogwarts text-center py-3 mt-auto">
+      <div class="container">
+        <p class="mb-1">© 2026 J&S. Todos los derechos reservados.</p>
+        <p class="mb-0 small">Desarrollado por Ing. Shania Gómez</p>
+      </div>
+    </footer>
+  </body>
+</html>

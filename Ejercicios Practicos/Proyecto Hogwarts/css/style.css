@@ -1,0 +1,75 @@
+/* Forzar el fondo oscuro en toda la página y contenedores de Bootstrap */
+html,
+body {
+  background-color: #12161f !important;
+  color: #e2e8f0 !important;
+}
+
+/* Forzar que cualquier tarjeta (incluyendo las de Bootstrap) use el estilo mágico */
+.card {
+  background-color: #1a202c !important;
+  border-color: #d4af37 !important;
+  color: #e2e8f0 !important;
+}
+
+.navbar-hogwarts {
+  background-color: #0b0e14 !important;
+  border-bottom: 2px solid #d4af37 !important;
+}
+
+.navbar-brand,
+.nav-link {
+  font-family: "Cinzel", serif;
+  color: #d4af37 !important;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.footer-hogwarts {
+  background-color: #0b0e14 !important;
+  border-top: 1px solid #d4af37 !important;
+  color: #a0aec0 !important;
+  font-family: "Cinzel", serif;
+}
+
+.magic-card {
+  background-color: #1a202c !important;
+  border: 1px solid #d4af37 !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: #e2e8f0 !important;
+}
+
+/* Estilos para la tabla de hechizos */
+.table-hogwarts {
+  color: #e2e8f0 !important;
+}
+
+.table-hogwarts th {
+  background-color: #0b0e14 !important;
+  color: #d4af37 !important;
+  font-family: "Cinzel", serif;
+  border-bottom: 2px solid #d4af37;
+}
+
+.table-hogwarts td {
+  background-color: #1a202c !important;
+  color: #cbd5e0 !important;
+  vertical-align: middle;
+}
+
+/* Clase mágica para la fuente de los hechizos */
+.fuente-cinzel {
+  font-family: "Cinzel", serif;
+}
+
+.table-hogwarts tr:hover td {
+  background-color: #2d3748 !important; /* Un gris un poco más claro al pasar el mouse */
+  color: #d4af37 !important; /* Las letras se vuelven doradas */
+  transition: all 0.3s ease; /* Hace que el cambio sea suave */
+}
