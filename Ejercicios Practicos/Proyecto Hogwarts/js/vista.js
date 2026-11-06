@@ -21,3 +21,46 @@ export const pintarHechizos = (listaHechizos, filtro) => {
     tBody.appendChild(tr);
   });
 };
+//-----------------HASTA AQUI LA FUNCION PARA PINTAR LOS HECHIZOS------------------------
+
+//-----------------Funcion para pintar en pantalla a los profesores---------------------
+const profesores = document.getElementById("grid-profesores");
+
+export const showStaffList = (listaProf, filtro) => {
+  let staffList = listaProf;
+  profesores.innerHTML = "";
+
+  if (filtro !== "") {
+    staffList = listaProf.filter((teacher) => teacher.name.toLowerCase().startsWith(filtro.toLowerCase()));
+  }
+
+  staffList.forEach((teacher) => {
+    const divProf = document.createElement("div");
+    divProf.classList.add("col");
+
+    divProf.innerHTML = `<div
+            class="card magic-card h-100 text-center p-3 cursor-pointer"
+            data-id="profesor-${teacher.name}"
+            data-bs-target="#modalProfesor"
+            style="cursor: pointer"
+          >
+            <div class="d-flex justify-content-center mt-3">
+              <img
+                src="${teacher.image || "https://media.posterstore.com/site_images/68631b0f92c536b9cc92b033_1852152599_WB0012-5.jpg"} "
+                class="rounded-circle border border-2 border-warning shadow-sm"
+                alt="${teacher.name}"
+                style="width: 110px; height: 110px; object-fit: cover"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-warning fw-bold" style="font-family: &quot;Cinzel&quot;, serif">
+               ${teacher.name}
+              </h5>
+              <span class="badge bg-warning text-dark">${teacher.house}</span>
+            </div>
+          </div>
+        </div>`;
+
+    profesores.appendChild(divProf);
+  });
+};

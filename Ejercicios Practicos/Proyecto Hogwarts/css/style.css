@@ -1,7 +1,11 @@
 /* Forzar el fondo oscuro en toda la página y contenedores de Bootstrap */
 html,
 body {
-  background-color: #12161f !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(../img/este\ si.webp) !important;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* background-color: #12161f !important; */
   color: #e2e8f0 !important;
 }
 
