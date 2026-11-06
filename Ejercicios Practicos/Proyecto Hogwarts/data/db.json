@@ -4795,47 +4795,372 @@
       }
     }],
 
-    "info": [{
-            "id": 1,
-            "tipo": "Autora",
-            "contenido": "J. K. Rowling"
-        },
-        {
-            "id": 2,
-            "tipo": "Protagonísta",
-            "contenido": "Harry Potter"
-        },
-        {
-            "id": 3,
-            "tipo": "Antagonísta",
-            "contenido": "Lord Voldemort"
-        },
-        {
-            "id": 4,
-            "tipo": "Varita mágica de Harry Potter",
-            "contenido": "La varita de Harry Potter tenía 11 de largo, estaba hecha de acebo y poseía un núcleo de plumas de fénix. Esto fue descrito por Garrick Ollivander como una combinación inusual de núcleo de varita y madera. La pluma fue donada por Fawkes, el fénix de Albus Dumbledore."
-        },
-        {
-            "id": 5,
-            "tipo": "Varita mágica de Lord Voldemort",
-            "contenido": "La varita de Lord Voldemort tenía 11 de largo, estaba hecha de acebo y poseía un núcleo de plumas de fénix. Esto fue descrito por Garrick Ollivander como una combinación inusual de núcleo de varita y madera. La pluma fue donada por Fawkes, el fénix de Albus Dumbledore."
-        },
-        {
-            "id": 6,
-            "tipo": "Nombre real de Lord Voldemort",
-            "contenido": "Su nombre real es Tom Marvolo Riddle (mezclando las letras se forma Lord Voldemort)"
-        },
-        {
-            "id": 7,
-            "tipo": "Casas",
-            "contenido": "En la escuela Hogwarts hay cuatro casas: Gryffindor, Ravenclaw, Hufflepuff y Slytherin."
-        },
-        {
-            "id": 8,
-            "tipo": "Varitas",
-            "contenido": "La varita de Harry y la varita de Voldemort eran gemelas, por eso ellos no podían matarse entre sí."
-        }
-    ],
+    "profesores": [
+    {
+      "id": "prof_001",
+      "nombre": "Albus Percival Wulfric Brian Dumbledore",
+      "asignatura": "Transformaciones / Defensa Contra las Artes Oscuras (histórico)",
+      "casa": "Gryffindor",
+      "patronus": "Fénix",
+      "cargo": "Profesor y Director General de Hogwarts",
+      "actor_actriz": "Richard Harris / Michael Gambon",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/albus_dumbledore.png"
+    },
+    {
+      "id": "prof_002",
+      "nombre": "Minerva McGonagall",
+      "asignatura": "Transformaciones",
+      "casa": "Gryffindor",
+      "patronus": "Gato con marcas semejantes a sus gafas",
+      "cargo": "Jefa de Casa Gryffindor, Subdirectora y posterior Directora",
+      "actor_actriz": "Maggie Smith",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/minerva_mcgonagall.png"
+    },
+    {
+      "id": "prof_003",
+      "nombre": "Severus Snape",
+      "asignatura": "Pociones / Defensa Contra las Artes Oscuras",
+      "casa": "Slytherin",
+      "patronus": "Cierva",
+      "cargo": "Jefe de Casa Slytherin y Director (1997-1998)",
+      "actor_actriz": "Alan Rickman",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/severus_snape.png"
+    },
+    {
+      "id": "prof_004",
+      "nombre": "Filius Flitwick",
+      "asignatura": "Encantamientos",
+      "casa": "Ravenclaw",
+      "patronus": "No corpóreo",
+      "cargo": "Jefe de Casa Ravenclaw y Maestro de Duelo",
+      "actor_actriz": "Warwick Davis",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/filius_flitwick.png"
+    },
+    {
+      "id": "prof_005",
+      "nombre": "Pomona Sprout",
+      "asignatura": "Herbología",
+      "casa": "Hufflepuff",
+      "patronus": "No corpóreo",
+      "cargo": "Jefa de Casa Hufflepuff",
+      "actor_actriz": "Miriam Margolyes",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/pomona_sprout.png"
+    },
+    {
+      "id": "prof_006",
+      "nombre": "Remus John Lupin",
+      "asignatura": "Defensa Contra las Artes Oscuras",
+      "casa": "Gryffindor",
+      "patronus": "Lobo común",
+      "cargo": "Profesor titular (1993-1994)",
+      "actor_actriz": "David Thewlis",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/remus_lupin.png"
+    },
+    {
+      "id": "prof_007",
+      "nombre": "Rubeus Hagrid",
+      "asignatura": "Cuidado de Criaturas Mágicas",
+      "casa": "Gryffindor",
+      "patronus": "Incapaz de producirlo (magia insuficiente)",
+      "cargo": "Guardián de las Llaves y Terrenos de Hogwarts, Profesor",
+      "actor_actriz": "Robbie Coltrane",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/rubeus_hagrid.png"
+    },
+    {
+      "id": "prof_008",
+      "nombre": "Horace Eugene Flaccus Slughorn",
+      "asignatura": "Pociones",
+      "casa": "Slytherin",
+      "patronus": "Pez dorado",
+      "cargo": "Jefe de Casa Slytherin (reincorporado en 1996)",
+      "actor_actriz": "Jim Broadbent",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/horace_slughorn.png"
+    },
+    {
+      "id": "prof_009",
+      "nombre": "Sybill Patricia Trelawney",
+      "asignatura": "Adivinación",
+      "casa": "Ravenclaw",
+      "patronus": "No corpóreo",
+      "cargo": "Vidente y Profesora titular",
+      "actor_actriz": "Emma Thompson",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/sybill_trelawney.png"
+    },
+    {
+      "id": "prof_010",
+      "nombre": "Alastor 'Ojoloco' Moody (Barty Crouch Jr. encubierto)",
+      "asignatura": "Defensa Contra las Artes Oscuras",
+      "casa": "Desconocida / Slytherin (Crouch)",
+      "patronus": "Incorpóreo",
+      "cargo": "Profesor sustituto (1994-1995)",
+      "actor_actriz": "Brendan Gleeson",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/alastor_moody.png"
+    },
+    {
+      "id": "prof_011",
+      "nombre": "Gilderoy Lockhart",
+      "asignatura": "Defensa Contra las Artes Oscuras",
+      "casa": "Ravenclaw",
+      "patronus": "Incorpóreo",
+      "cargo": "Profesor titular (1992-1993)",
+      "actor_actriz": "Kenneth Branagh",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/gilderoy_lockhart.png"
+    },
+    {
+      "id": "prof_012",
+      "nombre": "Quirinus Quirrell",
+      "asignatura": "Estudios Muggles / Defensa Contra las Artes Oscuras",
+      "casa": "Ravenclaw",
+      "patronus": "Incorpóreo",
+      "cargo": "Profesor titular poseído por Lord Voldemort (1991-1992)",
+      "actor_actriz": "Ian Hart",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/quirinus_quirrell.png"
+    },
+    {
+      "id": "prof_013",
+      "nombre": "Rolanda Hooch",
+      "asignatura": "Vuelo e Instrucción de Escobas",
+      "casa": "Desconocida",
+      "patronus": "No corpóreo",
+      "cargo": "Instructora de Vuelo y Árbitro Oficial de Quidditch en Hogwarts",
+      "actor_actriz": "Zoë Wanamaker",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/rolanda_hooch.png"
+    },
+    {
+      "id": "prof_014",
+      "nombre": "Cuthbert Binns",
+      "asignatura": "Historia de la Magia",
+      "casa": "Desconocida",
+      "patronus": "Incapaz de conjurarlo (Entidad espectral)",
+      "cargo": "Único profesor fantasma en la historia del colegio",
+      "actor_actriz": "No adaptado en acción real",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/cuthbert_binns.png"
+    },
+    {
+      "id": "prof_015",
+      "nombre": "Charity Burbage",
+      "asignatura": "Estudios Muggles",
+      "casa": "Hufflepuff",
+      "patronus": "Incorpóreo",
+      "cargo": "Profesora titular hasta 1997",
+      "actor_actriz": "Carolyn Pickles",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/charity_burbage.png"
+    },
+    {
+      "id": "prof_016",
+      "nombre": "Septima Vector",
+      "asignatura": "Aritmancia",
+      "casa": "Desconocida",
+      "patronus": "No corpóreo",
+      "cargo": "Profesora titular de numerología mágica y cálculo de propiedades mágicas",
+      "actor_actriz": "Hazel Showham",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/septima_vector.png"
+    }
+  ],
+
+  "estudiantes": [
+    {
+      "id": "est_001",
+      "nombre": "Harry James Potter",
+      "apodo": "El Niño Que Vivió, El Elegido",
+      "casa": "Gryffindor",
+      "patronus": "Ciervo macho",
+      "varita": "Acebo, 28 cm (11 pulgadas), pluma de fénix (Fawkes)",
+      "actor_actriz": "Daniel Radcliffe",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/harry_potter.png"
+    },
+    {
+      "id": "est_002",
+      "nombre": "Hermione Jean Granger",
+      "apodo": "La mente más brillante de su generación",
+      "casa": "Gryffindor",
+      "patronus": "Nutria",
+      "varita": "Vid, 27.3 cm (10¾ pulgadas), nervio de corazón de dragón",
+      "actor_actriz": "Emma Watson",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/hermione_granger.png"
+    },
+    {
+      "id": "est_003",
+      "nombre": "Ronald Bilius Weasley",
+      "apodo": "Ron, Won-Won",
+      "casa": "Gryffindor",
+      "patronus": "Jack Russell Terrier",
+      "varita": "Sauce, 35.6 cm (14 pulgadas), pelo de unicornio",
+      "actor_actriz": "Rupert Grint",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/ron_weasley.png"
+    },
+    {
+      "id": "est_004",
+      "nombre": "Draco Lucius Malfoy",
+      "apodo": "El heredero de Malfoy Manor",
+      "casa": "Slytherin",
+      "patronus": "Incorpóreo / No demostrado",
+      "varita": "Espino, 25.4 cm (10 pulgadas), pelo de unicornio",
+      "actor_actriz": "Tom Felton",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/draco_malfoy.png"
+    },
+    {
+      "id": "est_005",
+      "nombre": "Luna Lovegood",
+      "apodo": "Lunática Lovegood",
+      "casa": "Ravenclaw",
+      "patronus": "Liebre",
+      "varita": "Madera y núcleo desconocidos (Segunda varita fabricada por Ollivander)",
+      "actor_actriz": "Evanna Lynch",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/luna_lovegood.png"
+    },
+    {
+      "id": "est_006",
+      "nombre": "Neville Longbottom",
+      "apodo": "El héroe de la espada de Gryffindor",
+      "casa": "Gryffindor",
+      "patronus": "No corpóreo",
+      "varita": "Cerezo, 33 cm (13 pulgadas), pelo de unicornio",
+      "actor_actriz": "Matthew Lewis",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/neville_longbottom.png"
+    },
+    {
+      "id": "est_007",
+      "nombre": "Cedric Diggory",
+      "apodo": "Campeón del Torneo de los Tres Magos",
+      "casa": "Hufflepuff",
+      "patronus": "Desconocido",
+      "varita": "Fresno, 31 cm (12¼ pulgadas), pelo de cola de unicornio macho",
+      "actor_actriz": "Robert Pattinson",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/cedric_diggory.png"
+    },
+    {
+      "id": "est_008",
+      "nombre": "Ginevra Molly Weasley",
+      "apodo": "Ginny",
+      "casa": "Gryffindor",
+      "patronus": "Caballo",
+      "varita": "Tejo, longitud y núcleo no especificados",
+      "actor_actriz": "Bonnie Wright",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/ginny_weasley.png"
+    },
+    {
+      "id": "est_009",
+      "nombre": "Cho Chang",
+      "apodo": "Buscadora del equipo de Ravenclaw",
+      "casa": "Ravenclaw",
+      "patronus": "Cisne",
+      "varita": "Madera y longitud no especificadas",
+      "actor_actriz": "Katie Leung",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/cho_chang.png"
+    },
+    {
+      "id": "est_010",
+      "nombre": "Fred Weasley",
+      "apodo": "Gred, Co-fundador de Sortilegios Weasley",
+      "casa": "Gryffindor",
+      "patronus": "Urraca",
+      "varita": "Madera y núcleo no especificados",
+      "actor_actriz": "James Phelps",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/fred_weasley.png"
+    },
+    {
+      "id": "est_011",
+      "nombre": "George Weasley",
+      "apodo": "Forge, Co-fundador de Sortilegios Weasley",
+      "casa": "Gryffindor",
+      "patronus": "Urraca",
+      "varita": "Madera y núcleo no especificados",
+      "actor_actriz": "Oliver Phelps",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/george_weasley.png"
+    },
+    {
+      "id": "est_012",
+      "nombre": "Seamus Finnigan",
+      "apodo": "El pirotécnico accidental",
+      "casa": "Gryffindor",
+      "patronus": "Zorro",
+      "varita": "Madera y longitud no especificadas",
+      "actor_actriz": "Devon Murray",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/seamus_finnigan.png"
+    },
+    {
+      "id": "est_013",
+      "nombre": "Dean Thomas",
+      "apodo": "El artista y Cazador de Gryffindor",
+      "casa": "Gryffindor",
+      "patronus": "Incorpóreo",
+      "varita": "Madera desconocida (varita confiscada y recuperada)",
+      "actor_actriz": "Alfred Enoch",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/dean_thomas.png"
+    },
+    {
+      "id": "est_014",
+      "nombre": "Pansy Parkinson",
+      "apodo": "Líder de las alumnas de Slytherin",
+      "casa": "Slytherin",
+      "patronus": "Incapaz de conjurarlo",
+      "varita": "Madera y núcleo no especificados",
+      "actor_actriz": "Scarlett Byrne",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/pansy_parkinson.png"
+    },
+    {
+      "id": "est_015",
+      "nombre": "Blaise Zabini",
+      "apodo": "Miembro del Club de las Eminencias",
+      "casa": "Slytherin",
+      "patronus": "Desconocido",
+      "varita": "Madera y núcleo no especificados",
+      "actor_actriz": "Louis Cordice",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/blaise_zabini.png"
+    },
+    {
+      "id": "est_016",
+      "nombre": "Hannah Abbott",
+      "apodo": "Prefecta de Hufflepuff y sanadora",
+      "casa": "Hufflepuff",
+      "patronus": "Incorpóreo",
+      "varita": "Madera y núcleo no especificados",
+      "actor_actriz": "Charlotte Skeoch",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/hannah_abbott.png"
+    },
+    {
+      "id": "est_017",
+      "nombre": "Padma Patil",
+      "apodo": "Prefecta de Ravenclaw",
+      "casa": "Ravenclaw",
+      "patronus": "Incorpóreo",
+      "varita": "Madera y núcleo no especificados",
+      "actor_actriz": "Afshan Azad",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/padma_patil.png"
+    },
+    {
+      "id": "est_018",
+      "nombre": "Parvati Patil",
+      "apodo": "Entusiasta de la adivinación",
+      "casa": "Gryffindor",
+      "patronus": "Incorpóreo",
+      "varita": "Madera y núcleo no especificados",
+      "actor_actriz": "Shefali Chowdhury",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/parvati_patil.png"
+    },
+    {
+      "id": "est_019",
+      "nombre": "Percy Ignatius Weasley",
+      "apodo": "Premio Anual, Pinperce",
+      "casa": "Gryffindor",
+      "patronus": "Incorpóreo",
+      "varita": "Madera y longitud no especificadas",
+      "actor_actriz": "Chris Rankin",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/percy_weasley.png"
+    },
+    {
+      "id": "est_020",
+      "nombre": "Oliver Wood",
+      "apodo": "Capitán y Guardián legendario de Gryffindor",
+      "casa": "Gryffindor",
+      "patronus": "Desconocido",
+      "varita": "Madera y longitud no especificadas",
+      "actor_actriz": "Sean Biggerstaff",
+      "imagen": "https://raw.githubusercontent.com/fedeperin/potterapi/master/public/images/characters/oliver_wood.png"
+    }
+  ],
+
     "personajes": [
         {
             "id": 1,
@@ -5106,72 +5431,7 @@
             "imagen": "https://raw.githubusercontent.com/fedeperin/harry-potter-api/main/imagenes/argus_filch.png"
         }
     ],
-    "libros": [
-        {
-            "id": 1,
-            "libro": "Harry Potter y la piedra filosofal",
-            "titulo_original": "Harry Potter and the Sorcerer's Stone",
-            "fecha_de_lanzamiento": "26 de junio de 1997",
-            "autora": "J. K. Rowling",
-            "descripcion": "El día de su cumpleaños, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Debe asistir a una famosa escuela de magia y hechicería, donde entabla una amistad con dos jóvenes que se convertirán en sus compañeros de aventura. Durante su primer año en Hogwarts, descubre que un malévolo y poderoso mago llamado Voldemort está en busca de una piedra filosofal que alarga la vida de quien la posee."
-        },
-        {
-            "id": 2,
-            "libro": "Harry Potter y la cámara secreta",
-            "titulo_original": "Harry Potter and the chamber of secrets",
-            "fecha_de_lanzamiento": "2 de julio de 1998",
-            "autora": "J. K. Rowling",
-            "descripcion": "Harry Potter y los estudiantes de segundo año investigan una malévola amenaza para sus compañeros de clases de Hogwarts, una amenazante bestia que se esconde dentro del castillo."
-        },
-        {
-            "id": 3,
-            "libro": "Harry Potter y el prisionero de Azkaban",
-            "titulo_original": "Harry Potter and the Prisoner of Azkaban",
-            "fecha_de_lanzamiento": "8 de julio de 1999",
-            "autora": "J. K. Rowling",
-            "descripcion": "El tercer año de estudios de Harry en Hogwarts se ve amenazado por la fuga de Sirius Black de la prisión de Azkaban. Al parecer, se trata de un peligroso mago que fue cómplice de Lord Voldemort y que intentará vengarse de Harry Potter."
-        },
-        {
-            "id": 4,
-            "libro": "Harry Potter y el cáliz de fuego",
-            "titulo_original": "Harry Potter and the Goblet of Fire",
-            "fecha_de_lanzamiento": "8 de julio de 2000",
-            "autora": "J. K. Rowling",
-            "descripcion": "Hogwarts se prepara para el Torneo de los Tres Magos, en el que competirán tres escuelas de hechicería. Para sorpresa de todos, Harry Potter es elegido para participar en la competencia, en la que deberá luchar contra dragones, internarse en el agua y enfrentarse a sus mayores miedos."
-        },
-        {
-            "id": 5,
-            "libro": "Harry Potter y la orden del Fénix",
-            "titulo_original": "Harry Potter and the Order of the Phoenix",
-            "fecha_de_lanzamiento": "21 de junio de 2003",
-            "autora": "J. K. Rowling",
-            "descripcion": "En su quinto año en Hogwarts, Harry descubre que muchos integrantes de la comunidad de magos no conocen la verdad acerca de su encuentro con Lord Voldemort. Cornelius Fudge, ministro de magia, designa a Dolores Umbridge como maestra de defensa contra de las artes oscuras porque cree que el profesor Dumbledore planea apoderarse de su trabajo. Pero sus enseñanzas son inadecuadas, por lo que Harry prepara a los estudiantes para defender la escuela en contra del mal."
-        },
-        {
-            "id": 6,
-            "libro": "Harry Potter y el misterio del príncipe",
-            "titulo_original": "Harry Potter and the Half-Blood Prince",
-            "fecha_de_lanzamiento": "16 de julio de 2005",
-            "autora": "J. K. Rowling",
-            "descripcion": "Harry descubre un poderoso libro y, mientras trata de descubrir sus orígenes, colabora con Dumbledore en la búsqueda de una serie de objetos mágicos que ayudarán en la destrucción de Lord Voldemort."
-        },
-        {
-            "id": 7,
-            "libro": "Harry Potter y las reliquias de la muerte",
-            "titulo_original": "Harry Potter and the Deathly Hallows",
-            "fecha_de_lanzamiento": "21 de julio de 2007",
-            "autora": "J. K. Rowling",
-            "descripcion": "Harry, Ron y Hermione se van a una peligrosa misión para localizar y destruir el secreto de la inmortalidad y destrucción de Voldemort - los Horrocruces. Solos, sin la guía de sus profesores o la protección del Profesor Dumbledore, los tres amigos deben apoyarse el uno en el otro más que nunca. Pero hay Fuerzas Oscuras en medio que amenazan con separarlos. Harry Potter se está acercando cada vez más a la tarea para la que se ha preparado desde el primer día que pisó Hogwarts: la última batalla con Voldemort."
-        },
-        {
-            "id": 8,
-            "libro": "Harry Potter y el legado maldito",
-            "titulo_original": "Harry Potter and the Cursed Child",
-            "fecha_de_lanzamiento": "30 de julio de 2016",
-            "autora": "J. K. Rowling",
-            "descripcion": "El segundo hijo de Harry entró a Hogwarts, pero en Slytherin. Su relación con Harry cada vez es peor y se hizo muy amigo del hijo de Draco, Scorpius Malfoy que se dice que es el hijo de Lord Voldemort"
-        }
-    ],
+    
     "creatures":[{
       "id": "acromantula",
       "slug": "acromantula",
@@ -5838,7 +6098,163 @@
       "status": null,
       "image": "https://harrypotter.fandom.com/wiki/Special:FilePath/Deep_Sea_Creatures_concept_art_made_by_Carlos_Huante.jpg",
       "wiki": "https://harrypotter.fandom.com/wiki/Dragon_Shark"
+    }],
+    "varitas": [
+    {
+      "id": "var_001",
+      "madera": "Saúco (Elder)",
+      "nucleo": "Pelo de cola de Thestral",
+      "longitud": "38.1 cm (15 pulgadas)",
+      "propietario_conocido": "Antioch Peverell, Emeric el Malvado, Gregorovitch, Gellert Grindelwald, Albus Dumbledore, Draco Malfoy, Harry Potter"
+    },
+    {
+      "id": "var_002",
+      "madera": "Acebo (Holly)",
+      "nucleo": "Pluma de fénix (Fawkes)",
+      "longitud": "28 cm (11 pulgadas)",
+      "propietario_conocido": "Harry Potter"
+    },
+    {
+      "id": "var_003",
+      "madera": "Tejo (Yew)",
+      "nucleo": "Pluma de fénix (Fawkes - varita gemela)",
+      "longitud": "34.3 cm (13½ pulgadas)",
+      "propietario_conocido": "Tom Marvolo Riddle (Lord Voldemort)"
+    },
+    {
+      "id": "var_004",
+      "madera": "Vid (Vine)",
+      "nucleo": "Nervio de corazón de dragón",
+      "longitud": "27.3 cm (10¾ pulgadas)",
+      "propietario_conocido": "Hermione Granger"
+    },
+    {
+      "id": "var_005",
+      "madera": "Fresno (Ash)",
+      "nucleo": "Pelo de unicornio",
+      "longitud": "30.5 cm (12 pulgadas)",
+      "propietario_conocido": "Charlie Weasley, transferida posteriormente a Ron Weasley"
+    },
+    {
+      "id": "var_006",
+      "madera": "Espino (Hawthorn)",
+      "nucleo": "Pelo de unicornio",
+      "longitud": "25.4 cm (10 pulgadas)",
+      "propietario_conocido": "Draco Malfoy"
+    },
+    {
+      "id": "var_007",
+      "madera": "Nogal (Walnut)",
+      "nucleo": "Nervio de corazón de dragón",
+      "longitud": "32.4 cm (12¾ pulgadas)",
+      "propietario_conocido": "Bellatrix Lestrange"
+    },
+    {
+      "id": "var_008",
+      "madera": "Ciprés (Cypress)",
+      "nucleo": "Pelo de unicornio",
+      "longitud": "26 cm (10¼ pulgadas)",
+      "propietario_conocido": "Remus Lupin"
     }
-
-    ]
+  ],
+  "escobas": [
+    {
+      "id": "esc_001",
+      "modelo": "Saeta de Fuego (Firebolt)",
+      "fabricante": "Randolph Keitch y Vasily Fronsak",
+      "uso_caracteristicas": "Escoba de carreras de nivel profesional de máxima categoría internacional. Acelera de 0 a 240 km/h en 10 segundos. Mango de fresno pulido con ramitas de abedul seleccionadas a mano, equilibrio aerodinámico insuperable y freno de corte automático patentado."
+    },
+    {
+      "id": "esc_002",
+      "modelo": "Nimbus 2000",
+      "fabricante": "Nimbus Racing Broom Company",
+      "uso_caracteristicas": "Líder de ventas tras su lanzamiento en 1991. Mango estilizado de caoba pulida y cerdas de abedul. Diseñada para alto rendimiento en Quidditch, combina velocidad punta superior con giros suaves y maniobrabilidad precisa."
+    },
+    {
+      "id": "esc_003",
+      "modelo": "Nimbus 2001",
+      "fabricante": "Nimbus Racing Broom Company",
+      "uso_caracteristicas": "Evolución directa de la Nimbus 2000 acabada en tonalidad gris carbón pulido. Diseñada con aceleración optimizada que superó a su predecesora; adoptada íntegramente por el equipo de Quidditch de Slytherin en 1992."
+    },
+    {
+      "id": "esc_004",
+      "modelo": "Barredora 11 (Cleansweep Eleven)",
+      "fabricante": "Cleansweep Broom Company",
+      "uso_caracteristicas": "Escoba deportiva duradera de gama media lanzada en 1995. Construida en madera de roble español con encantamiento antiturbulencias y control de frenado seguro; utilizada por Ron Weasley como Guardián de Gryffindor."
+    },
+    {
+      "id": "esc_005",
+      "modelo": "Cometa 260 (Comet 260)",
+      "fabricante": "Comet Trading Company",
+      "uso_caracteristicas": "Modelo confiable para el aprendizaje y juego recreativo. Provista de un encantamiento amortiguador para comodidad del jinete y desaceleración progresiva ante maniobras abruptas; utilizada por Cho Chang y Nymphadora Tonks."
+    },
+    {
+      "id": "esc_006",
+      "modelo": "Estrella Fugaz (Shooting Star)",
+      "fabricante": "Universal Brooms Ltd",
+      "uso_caracteristicas": "Escoba económica y popular en su lanzamiento en 1955, pero pronto obsoleta por pérdidas repentinas de velocidad y altura a medida que envejecía. Utilizada principalmente para clases de vuelo de primer año en Hogwarts."
+    }
+  ],
+  "casas": [
+    {
+      "id": "casa_gryffindor",
+      "nombre": "Gryffindor",
+      "fundador": "Godric Gryffindor",
+      "colores": ["Escarlata", "Dorado"],
+      "animal": "León",
+      "elemento": "Fuego",
+      "fantasma": "Sir Nicholas de Mimsy-Porpington (Nick Casi Decapitado)",
+      "sala_comun": {
+        "ubicacion": "Torre de Gryffindor (Séptimo piso)",
+        "acceso": "Cuadro de la Dama Gorda que solicita una contraseña cambiante",
+        "caracteristicas": "Habitación circular espaciosa decorada con tapices medievales, sillones mullidos y una chimenea de leña constante."
+      },
+      "valores": ["Valor", "Caballerosidad", "Coraje", "Determinación"]
+    },
+    {
+      "id": "casa_slytherin",
+      "nombre": "Slytherin",
+      "fundador": "Salazar Slytherin",
+      "colores": ["Verde esmeralda", "Plateado"],
+      "animal": "Serpiente",
+      "elemento": "Agua",
+      "fantasma": "El Barón Sanguinario",
+      "sala_comun": {
+        "ubicacion": "Mazmorras del Castillo (Bajo las aguas del Lago Negro)",
+        "acceso": "Muro de piedra desnuda que requiere una contraseña verbal",
+        "caracteristicas": "Cripta subterránea de techos abovedados, lámparas verdosas colgantes, chimenea tallada con serpientes y ventanas con vistas al lecho del lago."
+      },
+      "valores": ["Ambición", "Astucia", "Liderazgo", "Determinación", "Preservación"]
+    },
+    {
+      "id": "casa_ravenclaw",
+      "nombre": "Ravenclaw",
+      "fundador": "Rowena Ravenclaw",
+      "colores": ["Azul", "Bronce"],
+      "animal": "Águila",
+      "elemento": "Aire",
+      "fantasma": "La Dama Gris (Helena Ravenclaw)",
+      "sala_comun": {
+        "ubicacion": "Torre de Ravenclaw (Ala oeste)",
+        "acceso": "Aldaba de bronce en forma de águila que formula un acertijo lógico",
+        "caracteristicas": "Espacio amplio y circular con ventanas en arco, alfombra azul medianoche, techo abovedado pintado con constelaciones y una estatua de mármol de la fundadora."
+      },
+      "valores": ["Inteligencia", "Sabiduría", "Creatividad", "Curiosidad", "Individualismo"]
+    },
+    {
+      "id": "casa_hufflepuff",
+      "nombre": "Hufflepuff",
+      "fundador": "Helga Hufflepuff",
+      "colores": ["Amarillo canario", "Negro"],
+      "animal": "Tejón",
+      "elemento": "Tierra",
+      "fantasma": "El Fraile Gordo",
+      "sala_comun": {
+        "ubicacion": "Sótano de Hufflepuff (Junto a las cocinas del castillo)",
+        "acceso": "Pila de barriles; se debe golpear el segundo barril desde abajo al ritmo de 'Helga Hufflepuff'",
+        "caracteristicas": "Ambiente acogedor, cálido y terroso con techos bajos, plantas colgantes abundantes, muebles de madera de roble y ventanas circulares a ras del césped."
+      },
+      "valores": ["Lealtad", "Paciencia", "Justicia", "Trabajo duro", "Tolerancia"]
+    }
+  ]
 }
