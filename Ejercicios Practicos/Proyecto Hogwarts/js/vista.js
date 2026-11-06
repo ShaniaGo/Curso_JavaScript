@@ -6,7 +6,7 @@ export const pintarHechizos = (listaHechizos, filtro) => {
   tBody.innerHTML = "";
 
   if (filtro !== "") {
-    listaParaPintar = listaHechizos.filter((spell) => spell.hechizo.toLowerCase().startsWith(filtro.toLowerCase())); //  Filtro la lista para quedarme solo con los hechizos que empiezan con el texto buscado.
+    listaParaPintar = listaHechizos.filter((spell) => spell.attributes.name.toLowerCase().startsWith(filtro.toLowerCase())); //  Filtro la lista para quedarme solo con los hechizos que empiezan con el texto buscado.
   }
 
   // Acá estoy recorriendo los hechizos filtrados y pintándolos en pantalla
@@ -14,9 +14,10 @@ export const pintarHechizos = (listaHechizos, filtro) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
     <td class="ps-4 py-3">
-    <span class="fw-bold text-warning fs-5" style="font-family: 'Cinzel', serif;" >🪄 ${spell.hechizo}</span>
+    <span class="fw-bold text-warning fs-5" style="font-family: 'Cinzel', serif;" >🪄 ${spell.attributes.name}</span>
     </td>
-    <td class="pe-4 text-light text-center small">${spell.uso}</td>`;
+    <td class="text-center"><span class="badge bg-danger">${spell.attributes.category}</span></td>
+    <td class="pe-4 text-light small">${spell.attributes.effect}</td>`;
 
     tBody.appendChild(tr);
   });
@@ -31,7 +32,7 @@ export const showCharactersList = (listaProf, filtro) => {
   characters.innerHTML = "";
 
   if (filtro !== "") {
-    characterList = listaProf.filter((character) => character.name.toLowerCase().startsWith(filtro.toLowerCase()));
+    characterList = listaProf.filter((character) => character.personaje.toLowerCase().includes(filtro.toLowerCase()));
   }
 
   characterList.forEach((character) => {

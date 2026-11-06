@@ -15,14 +15,21 @@ const iniciarAppHechizos = async () => {
 
 iniciarAppHechizos();
 //FORMA MAS RAPIDA DE DARLE FUNCIONALIDAD A UN INPUT Y BOTONS
-divForm.addEventListener("input", async () => {
+if(divForm){
+  divForm.addEventListener("input", async () => {
   pintarHechizos(hechizosGuardados, lookInput.value);
 });
+}
+
+
 //-----------------HASTA AQUI LA FUNCION PARA LOS HECHIZOS------------------------
 
 import { getCharacters } from "./api.js";
 import { showCharactersList } from "./vista.js";
+
 let characterSave = [];
+const divCharacters = document.getElementById("formCharacters")
+const inputCharacters = document.getElementById("inputBuscarCharacter")
 
 const iniciarAppCharacters = async () => {
   if (document.getElementById("grid-profesores")) {
@@ -32,3 +39,11 @@ const iniciarAppCharacters = async () => {
 };
 
 iniciarAppCharacters();
+
+if(divCharacters){
+  divCharacters.addEventListener("input", async () => {
+  showCharactersList(characterSave, inputCharacters.value);
+});
+}
+
+
