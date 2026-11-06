@@ -1,7 +1,7 @@
 // fetch para obtener a los estudiantes
-const urlEstudiantes = "https://hp-api.onrender.com/api/characters/students";
+//const urlEstudiantes = "https://hp-api.onrender.com/api/characters/students";
 
-export const obtenerEstudiantes = async () => {
+/*export const obtenerEstudiantes = async () => {
   try {
     const response = await fetch(`${urlEstudiantes}`);
     if (!response.ok) {
@@ -38,10 +38,10 @@ export const obtenerProfesores = async () => {
   }
 };
 
-//obtenerProfesores();
+//obtenerProfesores(); */
 
 // fetch para obtener los hechizos
-const urlHechizos = "https://hp-api.onrender.com/api/spells";
+const urlHechizos = "./data/db.json";
 
 export const obtenerHechizos = async () => {
   try {
@@ -50,8 +50,8 @@ export const obtenerHechizos = async () => {
       throw new Error(`Hechizo no encontrado`);
     }
     const datos = await response.json();
-    console.log(datos);
-    return datos;
+    console.log(datos.hechizos);
+    return datos.hechizos;
   } catch (error) {
     // alerts("error", "Oops...", "Hechizo no encontrado");
     console.log(`${error}`);
@@ -59,4 +59,25 @@ export const obtenerHechizos = async () => {
   }
 };
 
-//obtenerHechizos();
+//  obtenerHechizos();
+
+// fetch para obtener a los personajes
+const urlCharacters = "./data/db.json";
+
+export const getCharacters = async () => {
+  try {
+    const response = await fetch(`${urlCharacters}`);
+    if (!response.ok) {
+      throw new Error(`Personaje no encontrado`);
+    }
+    const datos = await response.json();
+    console.log(datos.personajes);
+    return datos.personajes;
+  } catch (error) {
+    // alerts("error", "Oops...", "Estudiante no encontrado");
+    console.log(`${error}`);
+    return;
+  }
+};
+
+getCharacters()

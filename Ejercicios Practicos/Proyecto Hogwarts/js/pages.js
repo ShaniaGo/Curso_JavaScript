@@ -20,15 +20,15 @@ divForm.addEventListener("input", async () => {
 });
 //-----------------HASTA AQUI LA FUNCION PARA LOS HECHIZOS------------------------
 
-import { obtenerProfesores } from "./api.js";
-import { showStaffList } from "./vista.js";
-let staffSave = [];
+import { getCharacters } from "./api.js";
+import { showCharactersList } from "./vista.js";
+let characterSave = [];
 
-const iniciarAppStaff = async () => {
+const iniciarAppCharacters = async () => {
   if (document.getElementById("grid-profesores")) {
-    staffSave = await obtenerProfesores();
-    showStaffList(staffSave, "");
+    characterSave = await getCharacters();
+    showCharactersList(characterSave, "");
   }
 };
 
-iniciarAppStaff();
+iniciarAppCharacters();
