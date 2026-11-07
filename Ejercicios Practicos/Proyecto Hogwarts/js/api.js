@@ -61,18 +61,18 @@ export const obtenerHechizos = async () => {
 
 //  obtenerHechizos();
 
-// fetch para obtener a los personajes
-const urlCharacters = "./data/db.json";
+// fetch para obtener a los profesores
+const urlTeachers = "./data/db.json";
 
-export const getCharacters = async () => {
+export const getTeacher = async () => {
   try {
-    const response = await fetch(`${urlCharacters}`);
+    const response = await fetch(`${urlTeachers}`);
     if (!response.ok) {
       throw new Error(`Personaje no encontrado`);
     }
     const datos = await response.json();
-    console.log(datos.personajes);
-    return datos.personajes;
+    console.log(datos.profesores);
+    return datos.profesores;
   } catch (error) {
     // alerts("error", "Oops...", "Estudiante no encontrado");
     console.log(`${error}`);
@@ -80,4 +80,4 @@ export const getCharacters = async () => {
   }
 };
 
-getCharacters()
+getTeacher()

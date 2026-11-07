@@ -2,27 +2,7 @@ import { obtenerHechizos } from "./api.js";
 import { pintarHechizos } from "./vista.js";
 
 let hechizosGuardados = [];
-const lookInput = document.getElementById("inputBuscarHechizo");
-const divForm = document.getElementById("form");
-
-//Muestra todos los hechizos en la tabla desde el controlador
-const iniciarAppHechizos = async () => {
-  if (document.getElementById("tabla-hechizos-body")) {
-    hechizosGuardados = await obtenerHechizos();
-    pintarHechizos(hechizosGuardados, "");
-  }
-};
-
-iniciarAppHechizos();
-//FORMA MAS RAPIDA DE DARLE FUNCIONALIDAD A UN INPUT Y BOTONS
-if(divForm){
-  divForm.addEventListener("input", async () => {
-  pintarHechizos(hechizosGuardados, lookInput.value);
-});
-}
-
-
-//-----------------HASTA AQUI LA FUNCION PARA LOS HECHIZOS------------------------
+const lookInput = document.getEl
 
 import { getCharacters } from "./api.js";
 import { showCharactersList } from "./vista.js";
@@ -40,10 +20,12 @@ const iniciarAppCharacters = async () => {
 
 iniciarAppCharacters();
 
-if(divCharacters){
+/*if(divCharacters){
   divCharacters.addEventListener("input", async () => {
   showCharactersList(characterSave, inputCharacters.value);
 });
-}
-
-
+}*/
+if (!inputCharacters) return;
+inputCharacters.addEventListener("input", async () => {
+  showCharactersList(characterSave, inputCharacters.value);
+});

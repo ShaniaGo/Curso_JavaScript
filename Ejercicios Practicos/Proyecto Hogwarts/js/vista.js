@@ -25,43 +25,44 @@ export const pintarHechizos = (listaHechizos, filtro) => {
 //-----------------HASTA AQUI LA FUNCION PARA PINTAR LOS HECHIZOS------------------------
 
 //-----------------Funcion para pintar en pantalla a los personajes---------------------
-const characters = document.getElementById("grid-profesores");
+const teachers = document.getElementById("grid-profesores");
 
-export const showCharactersList = (listaProf, filtro) => {
-  let characterList = listaProf;
-  characters.innerHTML = "";
+export const showTeachersList = (listaProf, filtro) => {
+  let teacherList = listaProf;
+  teachers.innerHTML = "";
 
   if (filtro !== "") {
-    characterList = listaProf.filter((character) => character.personaje.toLowerCase().includes(filtro.toLowerCase()));
+    teacherList = listaProf.filter((teachers) => teacher.nombre.toLowerCase().includes(filtro.toLowerCase()));
   }
 
-  characterList.forEach((character) => {
-    const divCharacter = document.createElement("div");
-    divCharacter.classList.add("col");
+  teacherList.forEach((teacher) => {
+    const divTeacher = document.createElement("div");
+    divTeacher.classList.add("col");
 
-    divCharacter.innerHTML = `<div
+    divTeacher.innerHTML = `<div
             class="card magic-card h-100 text-center p-3 cursor-pointer"
-            data-id="profesor-${character.personaje}"
+            data-id="profesor-${teacher.nombre}"
             data-bs-target="#modalProfesor"
             style="cursor: pointer"
           >
             <div class="d-flex justify-content-center mt-3">
               <img
-                src="${character.imagen || "https://media.posterstore.com/site_images/68631b0f92c536b9cc92b033_1852152599_WB0012-5.jpg"} "
+                src="${teacher.imagen} "
+                onerror="this.onerror=null; this.src='https://m.media-amazon.com/images/I/71WmslB5DaL._AC_UF894,1000_QL80_.jpg';"
                 class="rounded-circle border border-2 border-warning shadow-sm"
-                alt="${character.personaje}"
+                alt="${teacher.nombre}"
                 style="width: 150px; height: 150px; object-fit: cover"
               />
             </div>
             <div class="card-body">
               <h5 class="card-title text-warning fw-bold" style="font-family: &quot;Cinzel&quot;, serif">
-               ${character.personaje}
+               ${teacher.nombre}
               </h5>
-              <span class="badge bg-warning text-dark">${character.casaDeHogwarts}</span>
+              <span class="badge bg-warning text-dark">${teacher.casa}</span>
             </div>
           </div>
         </div>`;
 
-    characters.appendChild(divCharacter);
+    teachers.appendChild(divTeacher);
   });
 };
