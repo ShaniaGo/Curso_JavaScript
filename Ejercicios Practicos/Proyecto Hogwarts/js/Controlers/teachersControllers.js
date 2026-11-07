@@ -1,5 +1,5 @@
 import { getTeacher } from "../api.js";
-import { showTeachersList } from "../vista.js";
+import { showTeachersList } from "../Views/teachersView.js";
 
 let characterSave = [];
 const divCharacters = document.getElementById("formCharacters")

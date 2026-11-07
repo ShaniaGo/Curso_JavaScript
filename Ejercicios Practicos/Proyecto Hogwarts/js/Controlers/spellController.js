@@ -1,5 +1,5 @@
 import { obtenerHechizos } from "../api.js";
-import { pintarHechizos } from "../vista.js";
+import { pintarHechizos } from "../Views/spellView.js";
 
 let hechizosGuardados = [];
 const lookInput = document.getElementById("inputBuscarHechizo");
