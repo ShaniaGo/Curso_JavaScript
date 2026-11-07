@@ -10,8 +10,6 @@ const divForm = document.getElementById("form");
 const iniciarAppHechizos = async () => {
   if (document.getElementById("tabla-hechizos-body")) {
     hechizosGuardados = await obtenerHechizos();
-    const categoriasUnicas = [...new Set(hechizosGuardados.map(h => h.attributes.category))];
-console.log("MIRA MIS CATEGORÍAS:", categoriasUnicas);
     pintarHechizos(hechizosGuardados, "");
   }
 };
